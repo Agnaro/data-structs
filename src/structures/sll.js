@@ -97,6 +97,19 @@ class SingleLinkList {
         this.length--;
         return cur;
     }
+
+    reverse() {
+        [this.head, this.tail] = [this.tail, this.head];
+        let next, prev, node;
+        node = this.tail;
+        prev = null;
+        while (node) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+    }
 }
 
 class Vertex {

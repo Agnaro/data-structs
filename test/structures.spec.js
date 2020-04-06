@@ -216,5 +216,20 @@ describe('Singlely Linked List', () => {
 
             expect(list.remove(1).val).to.eql(1);
         })
+    });
+    describe("reverse", () => {
+        it('should reverse the list in place', () => {
+            list.push(0);
+            list.push(1);
+            list.push(2);
+            list.push(3);
+
+            list.reverse();
+
+            expect(list.head.val).to.eql(3);
+            expect(list.tail.val).to.eql(0);
+            expect(list.get(1).val).to.eql(2);
+            expect(list.get(2).val).to.eql(1);
+        })
     })
 })
