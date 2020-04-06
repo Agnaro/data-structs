@@ -171,5 +171,50 @@ describe('Singlely Linked List', () => {
             expect(list.head.val).to.eql(0);
         })
     })
-    describe()
+    describe('remove', () => {
+        it('should return null if idx is less than 0', () => {
+            expect(list.remove(-1)).to.be.null;
+        });
+        it('should return null if idx >= length', () => {
+            expect(list.remove(0)).to.be.null;
+        });
+        it('should be able to remove the last vtx in the list', () => {
+            list.push(0);
+            list.push(1);
+
+            list.remove(1);
+
+            expect(list.length).to.eql(1);
+            expect(list.head.val).to.eql(0);
+            expect(list.tail).to.eql(list.head)
+        });
+        it("should be able to remove the first vtx in the list", () => {
+            list.push(0);
+            list.push(1);
+            
+            list.remove(0);
+
+            expect(list.length).to.eql(1);
+            expect(list.head.val).to.eql(1);
+            expect(list.tail).to.eql(list.head)
+        })
+        it("should remove a vtx in the middle of the list", () => {
+            list.push(0);
+            list.push(1);
+            list.push(2);
+
+            list.remove(1);
+
+            expect(list.length).to.eql(2);
+            expect(list.head.val).to.eql(0);
+            expect(list.get(1).val).to.eql(2);
+        });
+        it('should return the removed value', () => {
+            list.push(0);
+            list.push(1);
+            list.push(2);
+
+            expect(list.remove(1).val).to.eql(1);
+        })
+    })
 })

@@ -87,7 +87,15 @@ class SingleLinkList {
     }
 
     remove(idx) {
-        
+        if(idx < 0 || idx >= this.length) { return null; }
+        if(idx === 0) { return this.shift() }
+        if(idx === this.length - 1) { return this.pop(); }
+
+        const pre = this.get(idx - 1);
+        const cur = pre.next;
+        pre.next = cur.next;
+        this.length--;
+        return cur;
     }
 }
 
