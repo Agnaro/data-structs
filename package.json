@@ -1,0 +1,15 @@
+{
+  "name": "js-algo-and-data-struct",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "node .",
+    "test": "mocha"
+  }
+}
